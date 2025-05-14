@@ -3,6 +3,10 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3000);
+
+  // Aktifkan CORS agar dapat diakses dari berbagai origin, termasuk flutter web/emulator
+  app.enableCors();
+
+  await app.listen(3000);
 }
 bootstrap();
