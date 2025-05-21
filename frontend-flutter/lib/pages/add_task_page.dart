@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // Import GetX
 import 'package:login_sqflite_getx/models/task.dart';
 import 'package:intl/intl.dart'; 
 
@@ -17,7 +16,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   late TextEditingController descController;
   late TextEditingController dateController;
 
-  // List kategori yang tersedia
+  // List kategori yang tersedia - pastikan konsistensi huruf besar/kecil
   final List<String> categories = [
     'Belanja',
     'Jalan-jalan',
@@ -37,8 +36,17 @@ class _AddTaskPageState extends State<AddTaskPage> {
         TextEditingController(text: widget.task?.description ?? '');
     dateController = TextEditingController(text: widget.task?.date ?? '');
 
-    // Set kategori terpilih
-    selectedCategory = widget.task?.category ?? categories.first;
+    // Set kategori terpilih - tambahkan penanganan untuk nilai yang tidak ada dalam list
+    if (widget.task?.category != null) {
+      // Cari apakah kategori task yang diedit ada dalam list categories
+      final matchingCategory = categories.firstWhere(
+        (category) => category.toLowerCase() == widget.task!.category.toLowerCase(),
+        orElse: () => categories.first, // Default ke kategori pertama jika tidak ditemukan
+      );
+      selectedCategory = matchingCategory;
+    } else {
+      selectedCategory = categories.first;
+    }
 
     // Parse tanggal jika ada
     if (widget.task?.date != null && widget.task!.date.isNotEmpty) {
@@ -155,16 +163,21 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       date: date,
                       category: selectedCategory,
                     );
-                    // Gunakan Get.back() untuk kembali dengan data, konsisten dengan GetX
-                    Get.back(result: newTask);
+                    
+                    
+                   
+                    
+                    // Beri jeda sebentar agar snackbar terlihat sebelum kembali
+                    Future.delayed(const Duration(milliseconds: 500), () {
+                      Navigator.pop(context, newTask);
+                    });
                   } else {
-                    // Gunakan Get.snackbar() untuk konsistensi dengan HomePage
-                    Get.snackbar(
-                      'Error',
-                      'Please fill all fields',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.red,
-                      colorText: Colors.white,
+                    // Tampilkan snackbar jika ada field yang kosong
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Please fill all fields'),
+                        backgroundColor: Colors.red,
+                      ),
                     );
                   }
                 },
