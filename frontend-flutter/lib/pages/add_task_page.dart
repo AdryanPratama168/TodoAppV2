@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart'; // Import GetX
 import 'package:login_sqflite_getx/models/task.dart';
 import 'package:intl/intl.dart'; 
 
@@ -154,12 +155,16 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       date: date,
                       category: selectedCategory,
                     );
-                    Navigator.pop(context,
-                        newTask);
+                    // Gunakan Get.back() untuk kembali dengan data, konsisten dengan GetX
+                    Get.back(result: newTask);
                   } else {
-                    // Tampilkan snackbar jika ada field yang kosong
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Please fill all fields')),
+                    // Gunakan Get.snackbar() untuk konsistensi dengan HomePage
+                    Get.snackbar(
+                      'Error',
+                      'Please fill all fields',
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.red,
+                      colorText: Colors.white,
                     );
                   }
                 },
@@ -169,7 +174,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 ),
                 child: Text(
                   widget.task == null ? "Add" : "Save",
-                  style: const TextStyle(fontSize: 16,color: Colors.white),
+                  style: const TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
             ],
