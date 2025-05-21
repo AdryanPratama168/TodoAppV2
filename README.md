@@ -47,17 +47,13 @@ TodoAppV2/
 
 4. Edit file `.env` sesuai dengan konfigurasi database dan pengaturan lainnya.
 
-5. Jalankan migrasi database (jika ada):
-   ```bash
-   npm run migration:run
-   ```
 
-6. Jalankan server NestJS:
+5. Jalankan server NestJS:
    ```bash
    npm run start:dev
    ```
    
-7. API backend akan berjalan di `http://localhost:3000`
+6. API backend akan berjalan di `http://localhost:3000`
 
 ### 📱 Setup Mobile (Flutter)
 
