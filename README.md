@@ -88,7 +88,7 @@ TodoAppV2/
 - Menghapus todo
 - Autentikasi pengguna
 
-## 📝 Catatan Tambahan
+## Catatan Tambahan
 - Database harus di buat terlebih dahulu di postgreSQL dengan nama todoapp
 - ubah nama file .env.example menjadi .env lalu isilah sesuai dengan format yang tertera
 - Backend akan otomatis menyambung ke database PostgreSQL berdasarkan konfigurasi .env
