@@ -94,14 +94,7 @@ TodoAppV2/
 
 ## 📝 Catatan Tambahan
 - Database harus di buat terlebih dahulu dengan nama todoapp
-- buatlah file .env didalam folder backend-nestjs lalu tambahkan :
-  ```bash
-  DB_HOST=localhost
-  DB_PORT=Port anda
-  DB_USERNAME=Username anda
-  DB_PASSWORD=Pasword anda
-  DB_NAME=todoapp
-   ```
+- ubah nama file .env.example menjadi .env lalu isilah sesuai dengan format yang tertera
 - Backend akan otomatis menyambung ke database PostgreSQL berdasarkan konfigurasi .env
 - Table akan otomatis dibuat
 - Jika aplikasi mobile tidak bisa terhubung ke backend, periksa kembali konfigurasi URL API dan pastikan emulator/simulator dapat mengakses server backend
