@@ -114,7 +114,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
               // TextField untuk tanggal
               TextField(
                 controller: dateController,
-                readOnly: true, // Membuat field hanya untuk membaca
+                readOnly: true,
                 decoration: InputDecoration(
                   labelText: "Date",
                   border: const OutlineInputBorder(),
@@ -124,7 +124,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   ),
                 ),
                 onTap: () =>
-                    _selectDate(context), // Fungsi untuk menampilkan date picker
+                    _selectDate(context)
               ),
               const SizedBox(height: 16),
               // Dropdown untuk kategori

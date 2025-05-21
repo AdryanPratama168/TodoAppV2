@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
                 size: 28,
               ),
               onPressed: () {
-                // Konfirmasi logout dengan dialog
+                // Konfirmasi logout
                 Get.dialog(
                   AlertDialog(
                     title: const Text('Logout'),
@@ -323,7 +323,6 @@ class HomePage extends StatelessWidget {
                                                     updatedTask is Task) {
                                                   todoController.updateTask(
                                                       updatedTask);
-                                                  // Tambahkan notifikasi saat berhasil mengedit task
                                                   Get.snackbar(
                                                     'Success',
                                                     'Task successfully updated',

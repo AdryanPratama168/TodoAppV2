@@ -3,8 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:login_sqflite_getx/models/task.dart';
 
 class ApiService {
-  final String baseUrl = 'http://10.0.2.2:3000'; // For Android Emulator
-  // Use 'http://localhost:3000' for iOS or web testing
+  final String baseUrl = 'http://10.0.2.2:3000'; 
 
   // Authentication
   Future<Map<String, dynamic>?> login(String username, String password) async {
