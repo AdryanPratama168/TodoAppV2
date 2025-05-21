@@ -92,5 +92,5 @@ TodoAppV2/
 - Database harus di buat terlebih dahulu dengan nama todoapp
 - ubah nama file .env.example menjadi .env lalu isilah sesuai dengan format yang tertera
 - Backend akan otomatis menyambung ke database PostgreSQL berdasarkan konfigurasi .env
-- Table akan otomatis dibuat
+- Table akan otomatis dibuat saat backend nya di run jadi tidak perlu membuat table lagi
 - Jika aplikasi mobile tidak bisa terhubung ke backend, periksa kembali konfigurasi URL API dan pastikan emulator/simulator dapat mengakses server backend
