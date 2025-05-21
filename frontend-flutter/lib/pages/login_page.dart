@@ -8,7 +8,6 @@ class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final AuthController authController = Get.put(AuthController());
-
   LoginPage({Key? key}) : super(key: key);
 
   @override
