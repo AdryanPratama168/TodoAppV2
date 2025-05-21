@@ -89,7 +89,7 @@ TodoAppV2/
 - 👤 Autentikasi pengguna
 
 ## 📝 Catatan Tambahan
-- Database harus di buat terlebih dahulu dengan nama todoapp
+- Database harus di buat terlebih dahulu di postgreSQL dengan nama todoapp
 - ubah nama file .env.example menjadi .env lalu isilah sesuai dengan format yang tertera
 - Backend akan otomatis menyambung ke database PostgreSQL berdasarkan konfigurasi .env
 - Table akan otomatis dibuat saat backend nya di run jadi tidak perlu membuat table lagi
