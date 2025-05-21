@@ -16,7 +16,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   late TextEditingController descController;
   late TextEditingController dateController;
 
-  // List kategori yang tersedia
+  // List kategori yang tersedia - pastikan konsistensi huruf besar/kecil
   final List<String> categories = [
     'Belanja',
     'Jalan-jalan',
@@ -36,8 +36,17 @@ class _AddTaskPageState extends State<AddTaskPage> {
         TextEditingController(text: widget.task?.description ?? '');
     dateController = TextEditingController(text: widget.task?.date ?? '');
 
-    // Set kategori terpilih
-    selectedCategory = widget.task?.category ?? categories.first;
+    // Set kategori terpilih - tambahkan penanganan untuk nilai yang tidak ada dalam list
+    if (widget.task?.category != null) {
+      // Cari apakah kategori task yang diedit ada dalam list categories
+      final matchingCategory = categories.firstWhere(
+        (category) => category.toLowerCase() == widget.task!.category.toLowerCase(),
+        orElse: () => categories.first, // Default ke kategori pertama jika tidak ditemukan
+      );
+      selectedCategory = matchingCategory;
+    } else {
+      selectedCategory = categories.first;
+    }
 
     // Parse tanggal jika ada
     if (widget.task?.date != null && widget.task!.date.isNotEmpty) {
@@ -154,12 +163,21 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       date: date,
                       category: selectedCategory,
                     );
-                    Navigator.pop(context,
-                        newTask);
+                    
+                    
+                   
+                    
+                    // Beri jeda sebentar agar snackbar terlihat sebelum kembali
+                    Future.delayed(const Duration(milliseconds: 500), () {
+                      Navigator.pop(context, newTask);
+                    });
                   } else {
                     // Tampilkan snackbar jika ada field yang kosong
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Please fill all fields')),
+                      const SnackBar(
+                        content: Text('Please fill all fields'),
+                        backgroundColor: Colors.red,
+                      ),
                     );
                   }
                 },
@@ -169,7 +187,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 ),
                 child: Text(
                   widget.task == null ? "Add" : "Save",
-                  style: const TextStyle(fontSize: 16,color: Colors.white),
+                  style: const TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
             ],

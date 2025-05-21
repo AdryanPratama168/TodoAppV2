@@ -323,6 +323,14 @@ class HomePage extends StatelessWidget {
                                                     updatedTask is Task) {
                                                   todoController.updateTask(
                                                       updatedTask);
+                                                  // Tambahkan notifikasi saat berhasil mengedit task
+                                                  Get.snackbar(
+                                                    'Success',
+                                                    'Task successfully updated',
+                                                    snackPosition: SnackPosition.BOTTOM,
+                                                    backgroundColor: Colors.green,
+                                                    colorText: Colors.white,
+                                                  );
                                                 }
                                               },
                                               tooltip: 'Edit',
