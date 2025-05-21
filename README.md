@@ -9,29 +9,35 @@ Ini adalah proyek aplikasi yang terdiri dari:
 
 ## 📁 Struktur Folder
 
-TodoAppV2/
+TodoAppV2
 │
 ├── frontend-flutter/ # Folder untuk project Flutter (APK)
 └── backend-nestjs/ # Folder untuk API NestJS
 
 ---
 
-## 🔧 Persiapan Awal
+## 🔧 Persiapan Sebelum Menjalankan
 
-Sebelum mulai, pastikan kamu sudah meng-install:
+### ✅ Prasyarat
 
-### Untuk Flutter:
-- Flutter SDK: https://flutter.dev/docs/get-started/install
-- Emulator Android atau HP fisik
-- Android Studio atau VS Code
+Pastikan kamu sudah menginstall:
 
-### Untuk NestJS:
-- Node.js (disarankan versi LTS): https://nodejs.org/
-- npm (otomatis terinstall dengan Node.js)
-- NestJS CLI:
+#### Untuk Flutter (Frontend):
+- [Flutter SDK](https://flutter.dev/docs/get-started/install)
+- Android Studio / Visual Studio Code
+- Emulator Android atau perangkat fisik
+
+#### Untuk NestJS (Backend):
+- [Node.js LTS](https://nodejs.org/en/download/)
+- npm (sudah termasuk saat install Node.js)
+- NestJS CLI (jika belum ada, jalankan):
+  ```bash
+  npm install -g @nestjs/cli
+
+---
+
+####🚀 Cara Menjalankan Proyek
+**1. Clone Repository**
 ```bash
-npm install -g @nestjs/cli
-
-
-
-
+git clone https://github.com/AdryanPratama168/TodoAppV2.git
+cd TodoAppV2
