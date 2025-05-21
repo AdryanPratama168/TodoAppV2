@@ -1,11 +1,11 @@
-# 🚀 Aplikasi Flutter & NestJS
+# Aplikasi Flutter & NestJS
 
-## 📱 Tentang Aplikasi
+## Tentang Aplikasi
 Aplikasi ini terdiri dari dua komponen utama:
 - **Aplikasi Mobile** yang dibangun menggunakan Flutter
 - **Backend API** yang dibangun menggunakan NestJS
 
-## 🔧 Prasyarat
+## Syarat
 Sebelum memulai, pastikan Anda telah menginstal:
 
 - [Flutter](https://flutter.dev/docs/get-started/install) 
@@ -15,16 +15,16 @@ Sebelum memulai, pastikan Anda telah menginstal:
 - [Git](https://git-scm.com/)
 - [postgreSQL](https://www.postgresql.org/download/)
 
-## 📂 Struktur Proyek
+## Struktur Proyek
 ```
 TodoAppV2/
 ├── frontend-flutter/        # Aplikasi mobile Flutter
 └── backen-nestjs/           # API backend NestJS
 ```
 
-## 🏁 Memulai
+## Memulai
 
-### 🔌 Setup Backend (NestJS)
+### Setup Backend (NestJS)
 
 1. Buka terminal dan masuk ke direktori backend:
    ```bash
@@ -55,7 +55,7 @@ TodoAppV2/
    
 6. API backend akan berjalan di `http://localhost:3000`
 
-### 📱 Setup Mobile (Flutter)
+### Setup Mobile (Flutter)
 
 1. Masuk ke direktori mobile:
    ```bash
@@ -80,13 +80,13 @@ TodoAppV2/
    flutter run
    ```
 
-## 🔄 Fitur Utama TodoApp
+## Fitur Utama TodoApp
 
-- ✅ Melihat semua todo
-- ✏️ Menambahkan todo baru
-- 🔄 Mengedit todo
-- 🗑️ Menghapus todo
-- 👤 Autentikasi pengguna
+- Melihat semua todo
+- Menambahkan todo baru
+- Mengedit todo
+- Menghapus todo
+- Autentikasi pengguna
 
 ## 📝 Catatan Tambahan
 - Database harus di buat terlebih dahulu di postgreSQL dengan nama todoapp
