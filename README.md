@@ -28,7 +28,7 @@ TodoAppV2/
 
 1. Buka terminal dan masuk ke direktori backend:
    ```bash
-   cd backend
+   cd backend-nestjs
    ```
 
 2. Instal semua dependensi:
@@ -57,7 +57,7 @@ TodoAppV2/
 
 ### Setup Mobile (Flutter)
 
-1. Masuk ke direktori mobile:
+1. Masuk ke direktori frontend:
    ```bash
    cd frontend-flutter
    ```
